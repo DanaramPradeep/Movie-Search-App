@@ -1,0 +1,32 @@
+/* Simple Movie Search App */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Arial, sans-serif; background: linear-gradient(135deg, #1e3c72, #2a5298, #7e22ce); min-height: 100vh; padding: 20px; }
+.container { max-width: 1300px; margin: 0 auto; }
+header { text-align: center; color: white; margin-bottom: 35px; }
+header h1 { font-size: 48px; margin-bottom: 10px; font-weight: bold; }
+.search-box { display: flex; gap: 12px; max-width: 650px; margin: 0 auto 35px; }
+#search-input { flex: 1; padding: 16px 22px; font-size: 16px; border: none; border-radius: 12px; outline: none; box-shadow: 0 6px 25px rgba(0,0,0,0.3); }
+#search-btn { padding: 16px 35px; font-size: 16px; font-weight: bold; background: #ff6b6b; color: white; border: none; border-radius: 12px; cursor: pointer; }
+.filters { display: flex; gap: 12px; justify-content: center; margin-bottom: 25px; flex-wrap: wrap; }
+.filter-btn { padding: 10px 22px; background: rgba(255,255,255,0.2); color: white; border: 2px solid rgba(255,255,255,0.3); border-radius: 25px; cursor: pointer; font-size: 14px; font-weight: 600; }
+.filter-btn.active { background: white; color: #1e3c72; }
+.results { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 25px; }
+.movie-card { background: white; border-radius: 18px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.3); cursor: pointer; }
+.movie-card:hover { transform: translateY(-12px); }
+.movie-card img { width: 100%; height: 380px; object-fit: cover; }
+.movie-info { padding: 18px; }
+.movie-title { font-size: 18px; font-weight: bold; margin-bottom: 8px; color: #1e3c72; }
+.movie-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.movie-year { color: #666; font-size: 14px; }
+.movie-rating { background: #ffd700; color: #333; padding: 4px 10px; border-radius: 15px; font-size: 12px; font-weight: bold; }
+.movie-type { background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 5px 12px; border-radius: 15px; font-size: 12px; }
+.modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 1000; }
+.modal.active { display: flex; align-items: center; justify-content: center; padding: 20px; }
+.modal-content { background: white; border-radius: 22px; max-width: 850px; width: 100%; max-height: 85vh; overflow-y: auto; position: relative; }
+.modal-close { position: absolute; top: 18px; right: 18px; background: #ff6b6b; color: white; border: none; width: 38px; height: 38px; border-radius: 50%; font-size: 22px; cursor: pointer; }
+.modal-header { position: relative; height: 380px; }
+.modal-poster { width: 100%; height: 100%; object-fit: cover; }
+.modal-body { padding: 25px; }
+.modal-title { font-size: 28px; font-weight: bold; color: #1e3c72; margin-bottom: 12px; }
+.modal-badge { background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 7px 14px; border-radius: 18px; font-size: 13px; margin-right: 10px; }
+@media (max-width: 768px) { header h1 { font-size: 36px; } .search-box { flex-direction: column; } .results { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); } }

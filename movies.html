@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Search App</title>
+  <link rel="stylesheet" href="movies.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🎬 Movie Search</h1>
+      <p>Search for any movie and get detailed information</p>
+    </header>
+
+    <div class="search-box">
+      <input type="text" id="search-input" placeholder="Search for a movie..." autofocus>
+      <button id="search-btn">Search</button>
+    </div>
+
+    <div class="filters">
+      <button class="filter-btn active" data-type="all">All</button>
+      <button class="filter-btn" data-type="movie">Movies</button>
+      <button class="filter-btn" data-type="series">TV Series</button>
+      <button class="filter-btn" data-type="game">Games</button>
+    </div>
+
+    <div id="loader" class="loader">🎬 Searching...</div>
+    <div id="error" class="error"></div>
+    <div id="results-info" class="results-info"></div>
+    <div id="results" class="results"></div>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close">&times;</button>
+      <div class="modal-header">
+        <img id="modal-poster" class="modal-poster" src="" alt="">
+      </div>
+      <div class="modal-body">
+        <h2 class="modal-title" id="modal-title"></h2>
+        <div class="modal-meta" id="modal-meta"></div>
+        <div class="modal-section">
+          <h3>Plot</h3>
+          <p id="modal-plot"></p>
+        </div>
+        <div class="modal-section">
+          <h3>Details</h3>
+          <p id="modal-details"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="movies.js"></script>
+</body>
+</html>
